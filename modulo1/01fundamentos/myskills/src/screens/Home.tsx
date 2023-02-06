@@ -24,6 +24,10 @@ export function Home() {
     setMySkills(prevState => [...prevState, newSkill]);
   }
 
+  function handleRomveSkill(skillId: string) {
+    setMySkills(prevState => prevState.filter(skill => skill !== skillId));
+  }
+
   useEffect(() => {
     const currentyHour = new Date().getHours();
     if (currentyHour < 12) {
@@ -46,13 +50,19 @@ export function Home() {
         onChangeText={text => setNewSkill(text)}
         value={newSkill}
       />
-      <Button onpress={handleAddNewSkill} />
+      <Button title="Add" onPress={handleAddNewSkill} />
       <Text style={[styles.title, {marginVertical: 30}]}>My Skills</Text>
 
       <FlatList
         data={mySkills}
         keyExtractor={item => item}
-        renderItem={({item: skill}) => <SkillCard key={skill} skill={skill} />}
+        renderItem={({item: skill}) => (
+          <SkillCard
+            onPress={() => handleRomveSkill(skill)}
+            key={skill}
+            skill={skill}
+          />
+        )}
       />
     </View>
   );
