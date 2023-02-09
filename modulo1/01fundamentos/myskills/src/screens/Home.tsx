@@ -41,8 +41,8 @@ export function Home() {
 
   return (
     <View style={styles.container}>
-      <Text style={styles.title}>Welcome, Erildo</Text>
-      <Text style={styles.greeting}>{greeting}</Text>
+      <Text style={styles.title}> Welcome, Erildo </Text>
+      <Text style={styles.greeting}> {greeting} </Text>
       <TextInput
         style={styles.input}
         placeholder="New skill"
@@ -51,16 +51,17 @@ export function Home() {
         value={newSkill}
       />
       <Button title="Add" onPress={handleAddNewSkill} />
-      <Text style={[styles.title, {marginVertical: 30}]}>My Skills</Text>
+
+      <Text style={[styles.title, {marginVertical: 30}]}> My Skills </Text>
 
       <FlatList
         data={mySkills}
         keyExtractor={item => item}
-        renderItem={({item: skill}) => (
+        renderItem={({item}) => (
           <SkillCard
-            onPress={() => handleRomveSkill(skill)}
-            key={skill}
-            skill={skill}
+            onPress={() => handleRomveSkill(item)}
+            key={item}
+            skill={item}
           />
         )}
       />

@@ -1,12 +1,14 @@
 import React from 'react';
-import {StatusBar, View} from 'react-native';
+import {StatusBar} from 'react-native';
 import {Home} from './src/screens/Home';
 
 export default function App() {
   return (
-    <View>
-      <StatusBar barStyle="light-content" />
+    <>
+      <StatusBar barStyle="light-content"/>
       <Home />;
-    </View>
+    </>
   );
 }
+
+//log box - caixa de erro
