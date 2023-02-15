@@ -1,6 +1,11 @@
 import React from 'react';
-import {Image, Text, View} from 'react-native';
+import {Feather} from '@expo/vector-icons'
+import {RFValue} from 'react-native-responsive-fontsize'
+import {Image, ScrollView, Text, View} from 'react-native';
+import {TransactionCard} from '../../components/TransactionCard';
+import {HighLightCard} from '../HighLightCard';
 import {styles} from './styles';
+import theme from '../../global/styles/theme';
 
 export function Dashboard() {
   return (
@@ -19,7 +24,24 @@ export function Dashboard() {
               <Text style={styles.userName}>Erildo</Text>
             </View>
           </View>
+
+        <Feather name='power' size={RFValue(24)} color={theme.colors.secondary}/>
         </View>
+      </View>
+
+      <ScrollView
+        style={styles.highLightCards}
+        horizontal
+        showsHorizontalScrollIndicator={false}
+        contentContainerStyle={{paddingHorizontal: 24}}>
+        <HighLightCard />
+        <HighLightCard />
+        <HighLightCard />
+      </ScrollView>
+
+      <View style={styles.transactions}>
+        <Text style={styles.title}>Listagem</Text>
+        <TransactionCard />
       </View>
     </View>
   );

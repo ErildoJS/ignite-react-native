@@ -11,10 +11,19 @@ export const styles = StyleSheet.create({
     width: '100%',
     height: RFPercentage(42),
     backgroundColor: `${theme.colors.primary}`,
+
+    flexDirection: 'row',
+    alignItems: 'flex-start',
+    justifyContent: 'center',
   },
   userWrapper: {
     width: '100%',
+    paddingVertical: 0,
     paddingHorizontal: 24,
+    marginTop: RFValue(40),//era 28
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'center',
   },
   userInfo: {
     flexDirection: 'row',
@@ -37,6 +46,20 @@ export const styles = StyleSheet.create({
     color: `${theme.colors.shape}`,
     fontSize: RFValue(18),
     fontFamily: `${theme.fonts.bold}`,
+  },
+  highLightCards: {
+    width: '100%',
+    position: 'absolute',
+    marginTop: RFPercentage(20),
+  },
+  transactions: {
+    flex: 1,
+    paddingHorizontal: 24,
+    marginTop: RFPercentage(12),
+  },
+  title: {
+    fontSize: RFValue(18),
+    fontFamily: `${theme.fonts.regular}`,
   },
 });
 
