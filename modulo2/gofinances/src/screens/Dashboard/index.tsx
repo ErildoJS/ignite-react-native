@@ -34,9 +34,10 @@ export function Dashboard() {
         horizontal
         showsHorizontalScrollIndicator={false}
         contentContainerStyle={{paddingHorizontal: 24}}>
-        <HighLightCard />
-        <HighLightCard />
-        <HighLightCard />
+        <HighLightCard title='Entradas' amount='Kwz 17.400,00' lastTransaction='Ultima entrada dia 13 de abril' type='up'/>
+        <HighLightCard title='Saidas' amount='Kwz 1.259,00' lastTransaction='Ultima saida dia 03 de abril'  type='down'/>
+        <HighLightCard title='Total' amount='Kwz 16.141,00' lastTransaction='01 a 16 de abril'  type='total'/>
+      
       </ScrollView>
 
       <View style={styles.transactions}>
