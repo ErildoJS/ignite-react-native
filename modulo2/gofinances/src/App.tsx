@@ -1,13 +1,11 @@
-import React from 'react';
 import {
-  useFonts,
   Poppins_400Regular,
   Poppins_500Medium,
-  Poppins_700Bold
+  Poppins_700Bold, useFonts
 } from '@expo-google-fonts/poppins';
-import AppLoading from 'expo-app-loading';
-import {Dashboard} from './screens/Dashboard';
-import { StatusBar, View } from 'react-native';
+import React from 'react';
+import { ActivityIndicator, StatusBar } from 'react-native';
+import { Dashboard } from './screens/Dashboard';
 
 export default function App() {
   const [fontsLoaded] = useFonts({
@@ -17,7 +15,7 @@ export default function App() {
   });
 
   if(!fontsLoaded){
-    return <AppLoading />
+    return <ActivityIndicator />
   }
 
   return (

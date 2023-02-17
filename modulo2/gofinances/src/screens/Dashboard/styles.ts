@@ -60,7 +60,11 @@ export const styles = StyleSheet.create({
   title: {
     fontSize: RFValue(18),
     fontFamily: `${theme.fonts.regular}`,
+    marginBottom: 16,
   },
+  transactionsList: {
+    
+  }
 });
 
 //densidade de pixel - e um numero total de pixel que existe dentro de uma area da tela

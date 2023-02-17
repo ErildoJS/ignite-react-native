@@ -1,13 +1,52 @@
 import React from 'react';
 import {Feather} from '@expo/vector-icons'
 import {RFValue} from 'react-native-responsive-fontsize'
-import {Image, ScrollView, Text, View} from 'react-native';
-import {TransactionCard} from '../../components/TransactionCard';
-import {HighLightCard} from '../HighLightCard';
+import {FlatList, Image, ScrollView, Text, View} from 'react-native';
+import {TransactionCard, TransactionCardProps} from '../../components/TransactionCard';
 import {styles} from './styles';
 import theme from '../../global/styles/theme';
+import { HighLightCard } from '../../components/HighLightCard';
+
+interface dataListProps extends TransactionCardProps {
+  id: string;
+}
 
 export function Dashboard() {
+  const data = [
+    {
+      id: '1',
+      type: 'positive',
+      title: 'Desenvolvimento de Software',
+      amount: 'kwz 12.000,00',
+      category: {
+        name: 'Vendas',
+        icon: 'dollar-sign'
+      },
+      date: '13/10/2022'
+    },
+    {
+      id: '2',
+      type: 'negative',
+      title: 'Pizza',
+      amount: 'kwz 1.000,00',
+      category: {
+        name: 'compras',
+        icon: 'coffee'
+      },
+      date: '23/10/2022'
+    },
+    {
+      id: '3',
+      type: 'negative',
+      title: 'aluguer',
+      amount: 'kwz 5.000,00',
+      category: {
+        name: 'casa',
+        icon: 'shopping-bag'
+      },
+      date: '13/10/2022'
+    },
+  ]
   return (
     <View style={styles.Container}>
       <View style={styles.header}>
@@ -42,7 +81,14 @@ export function Dashboard() {
 
       <View style={styles.transactions}>
         <Text style={styles.title}>Listagem</Text>
-        <TransactionCard />
+        <FlatList
+          showsVerticalScrollIndicator={false}
+          contentContainerStyle={{paddingBottom: 16}}
+          style={styles.transactionsList} 
+          data={data}
+          keyExtractor={item => item.id}
+          renderItem={({item}) => <TransactionCard title={item.title} amount={item.amount} category={{name: item.category.name, icon: item.category.icon}} date={item.date} type={item.type} />}
+        />
       </View>
     </View>
   );
