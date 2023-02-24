@@ -5,6 +5,7 @@ import {
 } from '@expo-google-fonts/poppins';
 import React from 'react';
 import { ActivityIndicator, StatusBar } from 'react-native';
+import { CategorySelect } from './screens/CategorySelect';
 import { Dashboard } from './screens/Dashboard';
 import { Register } from './screens/Register';
 

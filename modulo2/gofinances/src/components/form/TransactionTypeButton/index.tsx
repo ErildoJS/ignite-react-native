@@ -18,7 +18,7 @@ const icons = {
 
 export function TransactionTypeButton({title, type,  isActive,...rest}: Props) {
     return (
-        <TouchableOpacity style={[styles.container, isActive && type === 'up' ? {backgroundColor: theme.colors.success, borderWidth: 0} : isActive && type === 'down' ? {backgroundColor: theme.colors.attention_light, borderWidth: 0} : {borderWidth: 1.5}]} {...rest}>
+        <TouchableOpacity style={[styles.container, isActive && type === 'up' ? {backgroundColor: theme.colors.success_light, borderWidth: 0} : isActive && type === 'down' ? {backgroundColor: theme.colors.attention_light, borderWidth: 0} : {borderWidth: 1.5}]} {...rest}>
             <Feather name={icons[type]} size={RFValue(24)} style={{marginRight: 12}} color={type === 'up' ? theme.colors.success : theme.colors.attention}/>
             <Text style={styles.title}>{title}</Text>
         </TouchableOpacity>

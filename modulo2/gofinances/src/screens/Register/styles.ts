@@ -16,7 +16,7 @@ export const styles = StyleSheet.create({
     justifyContent: 'flex-end',
     paddingBottom: 19,
   },
-  text: {
+  title: {
     fontFamily: `${theme.fonts.regular}`,
     fontSize: RFValue(18),
     color: `${theme.colors.shape}`
@@ -31,7 +31,9 @@ export const styles = StyleSheet.create({
   fields: {},
   transactionsTypes: {
     flexDirection: 'row',
-    justifyContent: 'space-between'
+    justifyContent: 'space-between',
+    marginTop: 8,
+    marginBottom: 16,
   },
 });
 
