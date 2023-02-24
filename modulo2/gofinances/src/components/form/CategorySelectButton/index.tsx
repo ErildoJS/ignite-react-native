@@ -6,13 +6,13 @@ import { RFValue } from "react-native-responsive-fontsize";
 import theme from "../../../global/styles/theme";
 
 
-interface Props  {
+interface Props  extends TouchableOpacityProps{
     title: string;
 }
 
-export function CategorySelectButton({title}: Props) {
+export function CategorySelectButton({title, ...rest}: Props) {
     return (
-        <TouchableOpacity style={styles.container} activeOpacity={0.7}>
+        <TouchableOpacity {...rest} style={styles.container} activeOpacity={0.7}>
             <Text style={styles.category}>{title}</Text>
             <Feather name="chevron-down" size={RFValue(20)} color={theme.colors.text}/>
         </TouchableOpacity>
