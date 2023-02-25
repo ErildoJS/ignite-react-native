@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { Alert, Keyboard, Modal, Text, TouchableWithoutFeedback, View } from 'react-native';
-import { number } from 'yup';
 import { Button } from '../../components/form/Button';
 import { CategorySelectButton } from '../../components/form/CategorySelectButton';
 import { InputForm } from '../../components/form/InputForm';

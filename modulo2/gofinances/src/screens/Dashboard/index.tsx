@@ -6,7 +6,7 @@ import {TransactionCard, TransactionCardProps} from '../../components/Transactio
 import {styles} from './styles';
 import theme from '../../global/styles/theme';
 import { HighLightCard } from '../../components/HighLightCard';
-
+import {BorderlessButton} from 'react-native-gesture-handler'
 interface dataListProps extends TransactionCardProps {
   id: string;
 }
@@ -63,8 +63,10 @@ export function Dashboard() {
               <Text style={styles.userName}>Erildo</Text>
             </View>
           </View>
-
-        <Feather name='power' size={RFValue(24)} color={theme.colors.secondary}/>
+          
+          <BorderlessButton style={styles.logoutButton} onPress={() => {}}>
+            <Feather name='power' size={RFValue(24)} color={theme.colors.secondary}/>
+          </BorderlessButton>
         </View>
       </View>
 

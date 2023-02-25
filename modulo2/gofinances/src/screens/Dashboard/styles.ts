@@ -47,6 +47,9 @@ export const styles = StyleSheet.create({
     fontSize: RFValue(18),
     fontFamily: `${theme.fonts.bold}`,
   },
+  logoutButton: {
+    
+  },
   highLightCards: {
     width: '100%',
     position: 'absolute',
