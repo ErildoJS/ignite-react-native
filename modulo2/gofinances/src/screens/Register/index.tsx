@@ -44,7 +44,7 @@ export function Register() {
             <TransactionTypeButton title='Outcome' type='down' onPress={() => handleTransactionsTypeSelect('down')} isActive={transactionType === 'down'}/>
           </View>
 
-          <CategorySelectButton title='Categoria' onPress={handleOpenSelectCategoryModal}/>
+          <CategorySelectButton title={category.name} onPress={handleOpenSelectCategoryModal}/>
         </View>
         <Button title='Enviar'/>
       </View>

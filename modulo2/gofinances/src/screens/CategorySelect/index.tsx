@@ -5,7 +5,7 @@ import { styles } from './styles';
 import {Feather} from '@expo/vector-icons'
 import { RFValue } from "react-native-responsive-fontsize";
 import { Button } from "../../components/form/Button";
-
+import theme from "../../global/styles/theme";
 
 
 interface Category  {
@@ -20,6 +20,10 @@ interface Props {
 }
 
 export function CategorySelect({category, setCategory, closeSelectCategory}: Props) {
+    function handleCategorySelect(category: Category) {
+        setCategory(category)
+    }
+
     return (
         <View style={styles.container}>
             <View style={styles.header}>
@@ -29,10 +33,10 @@ export function CategorySelect({category, setCategory, closeSelectCategory}: Pro
             data={categories}
             keyExtractor={(item) => item.key}
             renderItem={({item}) => (
-                <View style={styles.category}>
+                <TouchableOpacity style={[styles.category, category.key === item.key ? {backgroundColor: theme.colors.secondary_light} : {backgroundColor: theme.colors.background}]} onPress={() => handleCategorySelect(item)}>
                     <Feather name={item.icon} style={{marginRight: 16}} size={RFValue(20)}/>
                     <Text style={styles.name}>{item.name}</Text>
-                </View>
+                </TouchableOpacity>
             )}
             ItemSeparatorComponent={() => <View style={styles.separator} />}
             />
