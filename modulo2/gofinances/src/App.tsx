@@ -3,11 +3,10 @@ import {
   Poppins_500Medium,
   Poppins_700Bold, useFonts
 } from '@expo-google-fonts/poppins';
+import { NavigationContainer } from '@react-navigation/native';
 import React from 'react';
 import { ActivityIndicator, StatusBar } from 'react-native';
-import { CategorySelect } from './screens/CategorySelect';
-import { Dashboard } from './screens/Dashboard';
-import { Register } from './screens/Register';
+import { AppRoutes } from './routes/app.routes';
 
 export default function App() {
   const [fontsLoaded] = useFonts({
@@ -21,10 +20,10 @@ export default function App() {
   }
 
   return (
-    <>
-    <StatusBar barStyle="light-content" />
-    <Register />
-    </>
+    <NavigationContainer>
+      <StatusBar barStyle="light-content" />
+      <AppRoutes />
+    </NavigationContainer>
   )  
   
 }
