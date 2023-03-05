@@ -44,13 +44,22 @@ export function Home() {
 
   function handleRemoveTask(id: number) {
     //TODO - remove task from state
-    const findIfTaskAlreadyExistsAndRemove = tasks.filter(function(task) {
-      return task.id !== id
-    })
-    if(findIfTaskAlreadyExistsAndRemove) {
-      Alert.alert('Remover item', 'Tem certeza que você deseja remover esse item?')
-      setTasks(findIfTaskAlreadyExistsAndRemove)
-    }
+    Alert.alert('Remover item', 'Tem certeza que vc quer remover esse item?', [
+      {
+        style: 'cancel',
+        text: 'Nao'
+      },
+      {
+        style: 'destructive',
+        text: 'Sim',
+        onPress: () => {
+          const findIfTaskAlreadyExistsAndRemove = tasks.filter(function(task) {
+            return task.id !== id
+          })
+          setTasks(findIfTaskAlreadyExistsAndRemove)
+        }
+      }
+    ])
   }
 
   function handleEditTask(taskId: number, taskNewTitle: string) {
